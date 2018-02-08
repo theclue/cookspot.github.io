@@ -1,8 +1,8 @@
 # ----
 # Site
 
-title: Treat Template
-url: "https://spring-bat.cloudvent.net/"
+title: Cook's Pot
+url: "https://cookspot.it"
 baseurl:
 google_analytics_key:
 newsletter_action: 
@@ -10,7 +10,7 @@ disqus_shortname:
 
 # Values for the jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
 logo: /siteicon.png
-description: Food blog template for Jekyll.
+description: Un blog di ricette fatto da una mamma lavoratrice per sopravvivere
 author:
   name:
   email:
@@ -36,7 +36,7 @@ defaults:
       layout: "post"
       push_sidebar_down: true
       print_stylesheet: true
-      comments: true
+      comments: false
       _options:
         content:
           width: 1560
