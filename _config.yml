@@ -4,21 +4,21 @@
 title: Cook's Pot
 url: "https://cookspot.it"
 baseurl:
-google_analytics_key:
+gtm_key: GTM-MHH5J4J
 newsletter_action: 
 disqus_shortname:
 
 # Values for the jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
 logo: /siteicon.png
-description: Un blog di ricette fatto da una mamma lavoratrice per sopravvivere
+description: Pentole sull'orlo di una crisi di nervi
 author:
   name:
   email:
   twitter: # twitter username without the @ symbol
 social:
-  name: Treat Template
+  name: Cook's Pot
   links:
-    - https://github.com/CloudCannon/treat-jekyll-template
+    - https://cookspot.it
 
 # -----
 # Build
