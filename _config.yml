@@ -3,9 +3,9 @@
 
 title: Cook's Pot
 url: "https://cookspot.it"
-baseurl:
+baseurl: cookspot.it
 gtm_key: GTM-MHH5J4J
-newsletter_action: 
+newsletter_action:
 disqus_shortname:
 
 # Values for the jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
