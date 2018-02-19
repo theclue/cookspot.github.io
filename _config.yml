@@ -2,8 +2,8 @@
 # Site
 
 title: Cook's Pot
-url: "https://theclue.github.io/cookspot.it/"
-baseurl:
+url: "https://theclue.github.io"
+baseurl: "/cookspot.it"
 gtm_key: GTM-MHH5J4J
 newsletter_action:
 disqus_shortname:
