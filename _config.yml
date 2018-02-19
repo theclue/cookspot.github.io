@@ -3,7 +3,7 @@
 
 title: Cook's Pot
 url: "https://cookspot.it"
-baseurl: cookspot.it
+baseurl:
 gtm_key: GTM-MHH5J4J
 newsletter_action:
 disqus_shortname:
