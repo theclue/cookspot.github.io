@@ -8,7 +8,7 @@
 		{% if category.url == page.url %}
 			{% assign class = class | append: " active" %}
 		{% endif %}
-		<a href="{% include relative-src.html src=category.url %}" class="{{ class }}">{{ category | capitalize | first }}</a>
+		<a href="{% include relative-src.html src=category.url %}" class="{{ class }}">{{ category | first | capitalize  }}</a>
 	{% endfor %}
 	{% assign categories_list = nil %}
 </nav>
