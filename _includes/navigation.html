@@ -3,14 +3,19 @@
 {% if page.url == "/" %}
 	{% assign class_home = class_home | append: " active" %}
 {% endif %}
-<a href="{% include relative-src.html src="" %}" class="{{ class_home }}">Home</a>
-	{% for category in site.categories %}
+<a href="{% include relative-src.html src="/" %}" class="{{ class_home }}">Home</a>
+	{% for category in site.category %}
 	{% assign class = "nav-item" %}
-	{% assign cat_name = category[0] %}
-	{% assign cat_path = cat_name | downcase | url_encode | prepend: '/' %}
-		{% if page.url contains cat_name %}
+	{% assign cat_name = category.tag  %}
+	{% assign cat_path = category.permalink %}
+		{% if page.url contains category.tag | downcase | url_encode %}
 			{% assign class = class | append: " active" %}
 		{% endif %}
 		<a href="{% include relative-src.html src=cat_path %}" class="{{ class }}">{{ cat_name | capitalize }}</a>
 	{% endfor %}
+  {% assign class_all = "nav-item" %}
+  {% if page.url contains "ricette" %}
+  	{% assign class_all = class_all | append: " active" %}
+  {% endif %}
+  <a href="{% include relative-src.html src="/ricette" %}" class="{{ class_all }}">Tutte le ricette</a>
 </nav>

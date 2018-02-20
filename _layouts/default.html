@@ -42,8 +42,8 @@
 	{% endif %}
 		{% include navigation.html %}
 		<header>
-			<a href="{{site.baseurl }}/">
-				<img src="{{ site.baseurl }}/images/cookspot-logo.svg" width="180" alt="Cook's Pot - Logo">
+			<a href="{% include relative-src.html src="/" %}">
+				<img src="{% include relative-src.html src="/images/cookspot-logo.svg" %}" width="180" alt="Cook's Pot - Logo">
 			</a>
 		</header>
 		<div class="container main-content">

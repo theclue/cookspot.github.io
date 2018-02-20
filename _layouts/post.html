@@ -4,7 +4,7 @@ layout: default
 <article class="post">
 	{% include post-heading.html post=page post_page=true %}
 	<div class="image">
-		<img src="{{site.baseurl}}{{ page.featured_image }}" alt="{{ page.title }}">
+		<img src="{% include relative-src.html src=page.featured_image %}" alt="{{ page.title }}">
 	</div>
 
 	<div class="recipe-body">
@@ -38,10 +38,28 @@ layout: default
 		<a class="email" href="mailto:?subject=I've%20found%20a%20great%20recipe&amp;body=Check%20it%20out%20-%20{{ share_url }}">{% include social-icon.html icon="Email" %}</a>
 	</div>
 
-	<div class="cta">
-		<h2>Posso offrirti altro?</h2>
-		<p>Questa &egrave; solo una delle ricette disponibili sul blog</p>
-		<div class="button"><a href="/recipes">Guarda le altre ricette</a></div>
+<div class="cta">
+  {% assign related_pitch = "" %}
+	{% assign firstCategory = page.categories | first %}
+	{% for category in site.category %}
+		{% if category.title == firstCategory %}
+			{% assign related_pitch = category.related_pitch %}
+		{% endif %}
+	{% endfor %}
+	<h2>Non era questo quello che avevi in mente{{ related_pitch | prepend: " " }}?</h2>
+	{% if page.show_related %}
+			<div class="recipes">
+    		{% for related in site.categories[firstCategory] %}
+        	{% unless page.url == related.url %}
+						<div class="recipe" style="background-image: url('{% include relative-src.html src=related.featured_image %}')">
+							<a href="{% include relative-src.html src=related.url %}"><span>{{ related.title }}</span></a>
+						</div>
+        {% endunless %}
+    		{% endfor %}
+			</div>
+		{% endif %}
+			<p>Prova una delle altre ricette disponibili sul blog!</p>
+		<div class="button"><a href="{% include relative-src.html src="/ricette" %}">Guarda tutte le altre ricette</a></div>
 	</div>
 	{% if site.disqus_shortname and page.comments %}
 		<div id="disqus_thread"></div>
@@ -63,7 +81,7 @@ layout: default
 </article>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script type="text/javascript" src="/js/jquery.imgPin.min.js"></script>
+<script type="text/javascript" src="{% include relative-src.html src="/js/jquery.imgPin.min.js" %}"></script>
 <script>
 	$(function() {
 		$('.post img').imgPin();

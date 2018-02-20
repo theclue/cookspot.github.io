@@ -20,6 +20,11 @@ social:
   links:
     - https://cookspot.it
 
+# collections
+collections:
+  category:
+    output: true
+
 # -----
 # Build
 
@@ -37,6 +42,7 @@ defaults:
       push_sidebar_down: true
       print_stylesheet: true
       comments: false
+      show_related: true
       _options:
         content:
           width: 1560
@@ -55,6 +61,14 @@ defaults:
     values:
       layout: "default"
       push_sidebar_down: true
+  -
+    scope:
+      path: ""
+      type: "category"
+    values:
+      layout: "category"
+      push_sidebar_down: true
+      image_view: true
 
 plugins:
   - jekyll-sitemap

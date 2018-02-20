@@ -5,6 +5,7 @@ categories:
   - Festa di Compleanno
   - Dolci Veloci
 featured_image: /images/torta-di-mele-veloce.png
+show_related: true
 recipe:
   servings: 4 persone
   prep: 15 minuti

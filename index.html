@@ -6,25 +6,25 @@ title: Home
 		<article class="post">
 			{% include post-heading.html post=post %}
 			<div class="image">
-				<img src="{{site.baseurl }}{{ post.featured_image }}" alt="{{ post.title }}">
+				<img src="{% include relative-src.html src=post.featured_image %}" alt="{{ post.title }}">
 			</div>
 
 			{{ post.excerpt }}
 
-			<p><a class="button" href="{{site.baseurl }}{{ post.url }}">Vai alla ricetta</a></p>
+			<p><a class="button" href="{% include relative-src.html src=post.url %}">Vai alla ricetta</a></p>
 		</article>
 	{% endfor %}
 
 	{% if paginator.total_pages > 1 %}
 		<div class="pagination">
 			{% if paginator.previous_page %}
-				<a href="{{ site.baseurl }}{{ paginator.previous_page_path }}" class="previous btn">&larr; Newer posts</a>
+				<a href="{% include relative-src.html src=paginator.previous_page_path %}" class="previous btn">&larr; Ricette più recenti</a>
 			{% endif %}
 
 			<span class="page_number ">{{ paginator.page }} of {{ paginator.total_pages }}</span>
 
 			{% if paginator.next_page %}
-				<a href="{{ site.baseurl }}{{ paginator.next_page_path }}" class="next btn">Older posts &rarr;</a>
+				<a href="{% include relative-src.html src=paginator.next_page_path %}" class="next btn">Ricette più vecchie &rarr;</a>
 			{% endif %}
 		</div>
 	{% endif %}
