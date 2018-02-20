@@ -42,11 +42,11 @@ layout: default
   {% assign related_pitch = "" %}
 	{% assign firstCategory = page.categories | first %}
 	{% for category in site.category %}
-		{% if category.title == firstCategory %}
+		{% if category.tag == firstCategory %}
 			{% assign related_pitch = category.related_pitch %}
 		{% endif %}
 	{% endfor %}
-	<h2>Non era questo quello che avevi in mente{{ related_pitch | prepend: " " }}?</h2>
+	<h2>Non è quello che avevi in mente{{ related_pitch | prepend: " " }}?</h2>
 	{% if page.show_related %}
 			<div class="recipes">
     		{% for related in site.categories[firstCategory] %}
@@ -59,7 +59,7 @@ layout: default
 			</div>
 		{% endif %}
 			<p>Prova una delle altre ricette disponibili sul blog!</p>
-		<div class="button"><a href="{% include relative-src.html src="/ricette" %}">Guarda tutte le altre ricette</a></div>
+		<div class="button"><a href="{% include relative-src.html src="/ricette" %}">Guarda le altre ricette</a></div>
 	</div>
 	{% if site.disqus_shortname and page.comments %}
 		<div id="disqus_thread"></div>
