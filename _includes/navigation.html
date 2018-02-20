@@ -1,14 +1,16 @@
-<nav>
-	{% assign categories_list = site.categories %}
-	{% if categories_list.first[0] == null %}
-
-	{% for category in categories_list %}
-	{% assign class = "" %}
-
-		{% if category.url == page.url %}
+<nav role="navigation">
+{% assign class_home = "nav-item" %}
+{% if page.url == "/" %}
+	{% assign class_home = class_home | append: " active" %}
+{% endif %}
+<a href="{% include relative-src.html src="" %}" class="{{ class_home }}">Home</a>
+	{% for category in site.categories %}
+	{% assign class = "nav-item" %}
+	{% assign cat_name = category[0] %}
+	{% assign cat_path = cat_name | downcase | url_encode | prepend: '/' %}
+		{% if page.url contains cat_name %}
 			{% assign class = class | append: " active" %}
 		{% endif %}
-		<a href="{% include relative-src.html src=category.url %}" class="{{ class }}">{{ category | first | capitalize  }}</a>
+		<a href="{% include relative-src.html src=cat_path %}" class="{{ class }}">{{ cat_name | capitalize }}</a>
 	{% endfor %}
-	{% assign categories_list = nil %}
 </nav>
