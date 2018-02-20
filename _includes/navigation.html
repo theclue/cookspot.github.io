@@ -1,11 +1,14 @@
 <nav>
-	<a class="editor-link btn" href="cloudcannon:collections/_data/navigation.yml" class="btn"><strong>&#9998;</strong> Edit navigation</a>
-	{% for link in site.data.navigation %}
+	{% assign categories_list = site.categories %}
+	{% if categories_list.first[0] == null %}
+
+	{% for category in categories_list %}
 	{% assign class = "" %}
 
-		{% if link.link == page.url %}
+		{% if category.url == page.url %}
 			{% assign class = class | append: " active" %}
 		{% endif %}
-		<a href="{% include relative-src.html src=link.link %}" class="{{ class }}">{{ link.name }}</a>
+		<a href="{% include relative-src.html src=category.url %}" class="{{ class }}">{{ category | capitalize | first }}</a>
 	{% endfor %}
+	{% assign categories_list = nil %}
 </nav>
