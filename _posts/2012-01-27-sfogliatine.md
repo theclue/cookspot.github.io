@@ -3,7 +3,7 @@ title: Sfogliatine al miele super veloci
 categories:
   - "Aiuto! Ho il frigo vuoto!"
   - "Merenda"
-featured_image: /images/sfogliatine.png
+featured_image: /images/sfogliatine-miele-super-veloci.png
 show_related: true
 recipe:
   servings: 2 persone
