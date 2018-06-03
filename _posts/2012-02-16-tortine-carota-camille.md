@@ -1,7 +1,7 @@
 ---
 title: Tortine alla carota (camille)
 categories:
-  - "Festa di compleanno"
+  - "Festa di Compleanno"
 featured_image: /images/tortine-carota-camille.png
 show_related: true
 recipe:

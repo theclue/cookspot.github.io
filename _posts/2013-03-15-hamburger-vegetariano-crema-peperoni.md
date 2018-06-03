@@ -1,7 +1,6 @@
 ---
 title: Hamburger vegetariano con crema di peperoni
 categories:
-  - "Per tutta la famiglia"
   - "Aiuto! Ho il frigo vuoto!"
 featured_image: /images/hambuger-verdure-crema-peperoni.png
 show_related: true
