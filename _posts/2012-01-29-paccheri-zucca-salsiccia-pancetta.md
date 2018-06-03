@@ -1,5 +1,5 @@
 ---
-title: Sfogliatine al miele super veloci
+title: Paccheri con zucca, salsiccia e pancetta
 categories:
   - "Per tutta la famiglia"
 featured_image: /images/paccheri-zucca-salsiccia-pancetta.png
